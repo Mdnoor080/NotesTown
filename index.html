@@ -1,29 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notes Town</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notestown - Your Knowledge, Your Way</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>📝 Notes Town</h1>
-    <p>Your Knowledge, Your Way</p>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Notestown</div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
-  <main>
-    <div class="note-input">
-      <textarea id="noteText" placeholder="Write your note here..."></textarea>
-      <button id="addNote">Add Note</button>
+  <!-- Home / Hero Section -->
+  <section id="home" class="hero section">
+    <div class="hero-text">
+      <h1>Welcome to <br><span>Notestown</span></h1>
+      <p>Your Knowledge, Your Way</p>
+      <button class="btn">View Notes</button>
     </div>
-    <h2>Your Notes</h2>
-    <ul id="notesList"></ul>
-  </main>
+    <div class="hero-image">
+  <img src="hero image.png" alt="Student illustration">
+</div>
+  </section>
 
-  <footer>
-    <p>© 2025 Notes Town</p>
-  </footer>
+<!-- About Section -->
+<section id="about" class="about section">
+  <h2>About Us</h2>
+  <p>At <strong>Notestown</strong>, our mission is to make learning easier and more accessible for students by providing high-quality lecture notes, lab programs, tutorials, and resources all in one place.</p>
+
+  <div class="about-features">
+    <!-- Feature 1 -->
+    <div class="about-feature">
+      <img src="https://img.icons8.com/ios-filled/80/45b6b0/book.png" alt="Lecture Notes">
+      <h3>Comprehensive Lecture Notes</h3>
+      <p>Well-organized notes for every subject to help students revise effectively and excel in exams.</p>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="about-feature">
+      <img src="https://img.icons8.com/ios-filled/80/45b6b0/laptop.png" alt="Lab Programs">
+      <h3>Practical Lab Programs</h3>
+      <p>Step-by-step lab programs for hands-on learning and understanding of practical concepts.</p>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="about-feature">
+      <img src="https://img.icons8.com/ios-filled/80/45b6b0/video.png" alt="Tutorials">
+      <h3>Interactive Tutorials</h3>
+      <p>Video and text-based tutorials to guide students through complex topics in an easy way.</p>
+    </div>
+  </div>
+
+  <div class="about-mission">
+    <h3>Our Mission</h3>
+    <p>We aim to empower students with knowledge and resources, helping them succeed academically while promoting independent and efficient learning.</p>
+  </div>
+
+  <div class="about-vision">
+    <h3>Our Vision</h3>
+    <p>To become the go-to platform for students worldwide, providing reliable, organized, and easily accessible learning materials for every course and subject.</p>
+  </div>
+</section>
+
+  <!-- Features Section -->
+  <section class="features section">
+    <h2>Our Features</h2>
+    <div class="feature-boxes">
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/100/45b6b0/document.png" alt="Lecture Notes" />
+        <h3>Lecture Notes</h3>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/100/45b6b0/code.png" alt="Lab Programs" />
+        <h3>Lab Programs</h3>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/100/45b6b0/play-button-circled.png" alt="Tutorials" />
+        <h3>Tutorials</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Notes Section -->
+  <section class="latest-notes section">
+    <h2>Latest Notes</h2>
+    <div class="note-cards">
+      <div class="note-card">
+        <div class="circle"></div>
+        <div class="line"></div>
+        <p>Some description text here...</p>
+      </div>
+      <div class="note-card">
+        <div class="circle"></div>
+        <div class="line"></div>
+        <p>Some description text here...</p>
+      </div>
+      <div class="note-card">
+        <div class="circle"></div>
+        <div class="line"></div>
+        <p>Some description text here...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog section">
+    <h2>Blog</h2>
+    <p>Read our latest articles and tips to improve your knowledge and stay updated with new topics.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section">
+    <h2>Contact Us</h2>
+    <p>Have questions? Reach out to us via email or social media. We're here to help!</p>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Go to top">↑</button>
 
   <script src="script.js"></script>
 </body>
