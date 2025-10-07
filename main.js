@@ -1,52 +1,54 @@
-const addNoteBtn = document.getElementById("addNote");
-const noteText = document.getElementById("noteText");
-const notesList = document.getElementById("notesList");
+// Mobile menu toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
 
-// Load saved notes from localStorage
-window.onload = function() {
-  let savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
-  savedNotes.forEach(note => addNoteToList(note));
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navLinks.classList.toggle("open");
+});
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
+});
+
+// Scroll animation for sections
+const sections = document.querySelectorAll('.section');
+
+const revealSection = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+
+    if(sectionTop < triggerBottom) {
+      section.classList.add('show');
+    }
+  });
 };
 
-// Add note event
-addNoteBtn.addEventListener("click", () => {
-  const text = noteText.value.trim();
-  if (text) {
-    addNoteToList(text);
-    saveNote(text);
-    noteText.value = "";
+window.addEventListener('scroll', revealSection);
+revealSection(); // Run on page load
+
+// Back to Top Button
+const backToTop = document.getElementById("backToTop");
+
+// Show button when scrolling down
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTop.style.display = "block";
   } else {
-    alert("Please write something before adding a note.");
+    backToTop.style.display = "none";
   }
 });
 
-// Function to add note in UI
-function addNoteToList(text) {
-  const li = document.createElement("li");
-  li.textContent = text;
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "Delete";
-  deleteBtn.classList.add("delete-btn");
-  deleteBtn.onclick = function() {
-    li.remove();
-    removeNote(text);
-  };
-
-  li.appendChild(deleteBtn);
-  notesList.appendChild(li);
-}
-
-// Save note in localStorage
-function saveNote(text) {
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
-  notes.push(text);
-  localStorage.setItem("notes", JSON.stringify(notes));
-}
-
-// Remove note from localStorage
-function removeNote(text) {
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
-  notes = notes.filter(note => note !== text);
-  localStorage.setItem("notes", JSON.stringify(notes));
-}
+// Scroll to top when button is clicked
+backToTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
